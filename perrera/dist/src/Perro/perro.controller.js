@@ -74,6 +74,23 @@ let PerroController = class PerroController {
             response.redirect('/Perro/Admin');
         });
     }
+    galeria(response, busqueda) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let perro;
+            if (busqueda) {
+                const consulta = {
+                    where: [
+                        { nombrePerro: busqueda }
+                    ]
+                };
+                perro = yield this._perroService.buscar(consulta);
+            }
+            else {
+                perro = yield this._perroService.buscar();
+            }
+            response.render('galeria-principal.ejs', { arreglo: perro });
+        });
+    }
 };
 __decorate([
     common_1.Get('Admin'),
@@ -116,6 +133,14 @@ __decorate([
     __metadata("design:paramtypes", [String, Object, Object]),
     __metadata("design:returntype", Promise)
 ], PerroController.prototype, "actualizar", null);
+__decorate([
+    common_1.Get('Galeria'),
+    __param(0, common_1.Res()),
+    __param(1, common_1.Query('busqueda')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, String]),
+    __metadata("design:returntype", Promise)
+], PerroController.prototype, "galeria", null);
 PerroController = __decorate([
     common_1.Controller('Perro'),
     __metadata("design:paramtypes", [perro_service_1.PerroService])

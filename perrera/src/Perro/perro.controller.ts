@@ -31,6 +31,7 @@ export class PerroController{
         response.render('administracionPerro.ejs',{arreglo: perro})
     }
 
+
     @Post('Admin/crear')
         async crearPerro(
             @Body() perro: Perro,
@@ -84,6 +85,27 @@ export class PerroController{
 
         response.redirect('/Perro/Admin')
 
+    }
+
+    @Get('Galeria')
+    async galeria(@Res() response,
+                 @Query('busqueda') busqueda: string
+    ){
+
+        let perro: PerroEntity[]
+
+        if (busqueda) {
+            const consulta = {
+                where: [
+                    {nombrePerro: busqueda}
+
+                ]
+            };
+            perro = await this._perroService.buscar(consulta);
+        } else {
+            perro =await this._perroService.buscar();
+        }
+        response.render('galeria-principal.ejs',{arreglo: perro})
     }
 
 
