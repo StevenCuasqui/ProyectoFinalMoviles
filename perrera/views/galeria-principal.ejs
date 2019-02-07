@@ -1,0 +1,37 @@
+<table>
+    <!-- tr -> table row -->
+    <tr>
+        <!-- th -> table header -->
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Tamaño</th>
+        <th>Sexo</th>
+        <th>Edad</th>
+        <th>Descripcion</th>
+        <th>Fertilidad</th>
+        <th>Vacuna</th>
+        <th>Chip</th>
+        <th>Adopcion</th>
+        <th>Fecha Entrada</th>
+        <th>Perrera</th>
+    </tr>
+    <!-- tr -> table row -->
+    <% arreglo.forEach((perro)=>{ %>
+    <tr>
+        <!-- td -> table detail -->
+        <td><%=perro.nombrePerro%></td>
+        <td><%=perro.razaPerro%></td>
+        <td><%=perro.tamanioPerro%></td>
+        <td><%=perro.sexoPerro%></td>
+        <td><%=perro.edadPerro%></td>
+        <td><%=perro.descrPerro%></td>
+        <td><%=perro.fertilidadPerro%></td>
+        <td><%=perro.vacunaPerro%></td>
+        <td><%=perro.chipPerro%></td>
+        <td><%=perro.adopcionPerro%></td>
+        <td><%=perro.fechaPerro%></td>
+        <td><%=perro.perreraIdPerrera%> </td>
+        
+    </tr>
+    <% }) %>
+</table>
