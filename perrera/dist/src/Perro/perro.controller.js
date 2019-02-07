@@ -26,31 +26,96 @@ let PerroController = class PerroController {
     constructor(_perroService) {
         this._perroService = _perroService;
     }
-    async(response) {
-        response.render('administracion.ejs');
+    inicio(response, busqueda) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let perro;
+            if (busqueda) {
+                const consulta = {
+                    where: [
+                        { nombrePerro: busqueda }
+                    ]
+                };
+                perro = yield this._perroService.buscar(consulta);
+            }
+            else {
+                perro = yield this._perroService.buscar();
+            }
+            response.render('administracionPerro.ejs', { arreglo: perro });
+        });
     }
     crearPerro(perro, response) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this._perroService.crear(perro);
-            response.render('galeria-principal.ejs');
+            response.redirect('/Perro/Admin');
+        });
+    }
+    borrar(idPerro, response) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const usuarioEncontrado = yield this._perroService
+                .buscarPorId(+idPerro);
+            yield this._perroService.borrar(Number(idPerro));
+            response.redirect('/Perro/Admin');
+        });
+    }
+    actualizarPerrera(idPerro, response) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const perroAActualizar = yield this
+                ._perroService
+                .buscarPorId(Number(idPerro));
+            response.render('actualizarPerro.ejs', {
+                perro: perroAActualizar
+            });
+        });
+    }
+    actualizar(idPerro, response, perro) {
+        return __awaiter(this, void 0, void 0, function* () {
+            perro.idPerro = +idPerro;
+            yield this._perroService.actualizar(+idPerro, perro);
+            response.redirect('/Perro/Admin');
         });
     }
 };
 __decorate([
-    common_1.Get('ingresoAdmin/:perroState'),
+    common_1.Get('Admin'),
     __param(0, common_1.Res()),
+    __param(1, common_1.Query('busqueda')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], PerroController.prototype, "async", null);
+    __metadata("design:paramtypes", [Object, String]),
+    __metadata("design:returntype", Promise)
+], PerroController.prototype, "inicio", null);
 __decorate([
-    common_1.Post('ingresoAdmin/:parametro'),
+    common_1.Post('Admin/crear'),
     __param(0, common_1.Body()),
     __param(1, common_1.Res()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], PerroController.prototype, "crearPerro", null);
+__decorate([
+    common_1.Post('Admin/borrar/:idPerro'),
+    __param(0, common_1.Param('idPerro')),
+    __param(1, common_1.Res()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], PerroController.prototype, "borrar", null);
+__decorate([
+    common_1.Get('Admin/actualizar/:idPerro'),
+    __param(0, common_1.Param('idPerro')),
+    __param(1, common_1.Res()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], PerroController.prototype, "actualizarPerrera", null);
+__decorate([
+    common_1.Post('Admin/actualizar/:idPerro'),
+    __param(0, common_1.Param('idPerro')),
+    __param(1, common_1.Res()),
+    __param(2, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object, Object]),
+    __metadata("design:returntype", Promise)
+], PerroController.prototype, "actualizar", null);
 PerroController = __decorate([
     common_1.Controller('Perro'),
     __metadata("design:paramtypes", [perro_service_1.PerroService])

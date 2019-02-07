@@ -1,0 +1,16 @@
+<form action="/Perrera/Admin/actualizar/<%= perrera.idPerrera %>"
+      method="POST">
+    <div>
+        <label for="nombrePerrera">Nombre</label>
+        <input id="nombrePerrera"
+               value="<%=perrera.nombrePerrera %>"
+               name="nombrePerrera" type="text">
+    </div>
+    <div>
+        <label for="capacidadPerrera">Capacidad</label>
+        <input name="capacidadPerrera" value="<%=perrera.capacidadPerrera%>"
+                  id="capacidadPerrera" type="number" >
+
+    </div>
+    <button >Actualizar Perrera</button>
+</form>

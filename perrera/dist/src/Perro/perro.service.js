@@ -37,6 +37,24 @@ let PerroService = class PerroService {
             return perroCreado;
         });
     }
+    buscar(parametros) {
+        return this._perroRepository.find(parametros);
+    }
+    buscarPorId(idPerro) {
+        return this._perroRepository.findOne(idPerro);
+    }
+    borrar(idPerro) {
+        const perroEntityAEliminar = this._perroRepository
+            .create({
+            idPerro: idPerro
+        });
+        return this._perroRepository.remove(perroEntityAEliminar);
+    }
+    actualizar(idPerro, nuevoPerro) {
+        nuevoPerro.idPerro = idPerro;
+        const perroEntity = this._perroRepository.create(nuevoPerro);
+        return this._perroRepository.save(perroEntity);
+    }
 };
 PerroService = __decorate([
     common_1.Injectable(),

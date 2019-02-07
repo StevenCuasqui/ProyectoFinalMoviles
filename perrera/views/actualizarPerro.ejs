@@ -1,0 +1,49 @@
+<form action="/Perro/Admin/actualizar/<%= perro.idPerro %>"
+      method="POST">
+
+    <div>
+        <label for="nombrePerro">Nombre de Perro:</label>
+        <input id="nombrePerro" name="nombrePerro" type="text" value="<%=perro.nombrePerro %>">
+    </div>
+    <div>
+        <label for="razaPerro">Raza de Perro:</label>
+        <input id="razaPerro" name="razaPerro" type="text" value="<%=perro.razaPerro %>">
+    </div>
+    <div>
+        <label for="tamanioPerro">Tamaño de Perro:</label>
+        <input id="tamanioPerro" name="tamanioPerro" type="text" value="<%=perro.tamanioPerro %>">
+    </div>
+    <div>
+        <label for="edadPerro">Edad de Perro:</label>
+        <input id="edadPerro" name="edadPerro" type="number" value="<%=perro.edadPerro %>">
+    </div>
+    <div>
+        <label for="descrPerro">Descripcion de Perro:</label>
+        <input id="descrPerro" name="descrPerro" type="text" value="<%=perro.descrPerro %>">
+    </div>
+    <div>
+        <label for="fertilidadPerro">Fertilidad de Perro:</label>
+        <input id="fertilidadPerro" name="fertilidadPerro" type="checkbox" value="<%=perro.fertilidadPerro %>">
+    </div>
+    <div>
+        <label for="vacunaPerro">Vacuna de Perro:</label>
+        <input id="vacunaPerro" name="vacunaPerro" type="checkbox" value="<%=perro.vacunaPerro %>">
+    </div>
+    <div>
+        <label for="chipPerro">Chip de Perro:</label>
+        <input id="chipPerro" name="chipPerro" type="checkbox" value="<%=perro.chipPerro %>">
+    </div>
+    <div>
+        <label for="adopcionPerro">Adoptado:</label>
+        <input id="adopcionPerro" name="adopcionPerro" type="checkbox" value="<%=perro.adopcionPerro %>">
+    </div>
+    <div>
+        <label for="fechaPerro">Fecha de entrada:</label>
+        <input id="fechaPerro" name="fechaPerro" type="text" value="<%=perro.fechaPerro %>">
+    </div>
+    <div>
+        <label for="idPerrera">Perrera a la que pertenece:</label>
+        <input id="idPerrera" name="idPerrera" type="number" value="<%=perro.perreraIdPerrera%>">
+    </div>
+    <button >Actualizar Perro</button>
+</form>

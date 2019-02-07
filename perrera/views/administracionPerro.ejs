@@ -1,0 +1,115 @@
+<div>
+    <h1>Administracion de Perros</h1>
+    <div><p>Este es un texto de prueba</p></div>
+</div>
+<form action="/Perro/Admin"
+      method="get">
+
+    <div>
+        <label for="busqueda">Busqueda</label>
+        <input id="busqueda" type="text" name="busqueda">
+    </div>
+
+    <button type="submit">Buscar</button>
+
+</form>
+
+<div>
+    <form action="/Perro/Admin/crear"
+          method="POST">
+        <div>
+            <label for="nombrePerro">Nombre de Perro:</label>
+            <input id="nombrePerro" name="nombrePerro" type="text">
+        </div>
+        <div>
+            <label for="razaPerro">Raza de Perro:</label>
+            <input id="razaPerro" name="razaPerro" type="text">
+        </div>
+        <div>
+            <label for="tamanioPerro">Tamaño de Perro:</label>
+            <input id="tamanioPerro" name="tamanioPerro" type="text">
+        </div>
+        <div>
+            <label for="edadPerro">Edad de Perro:</label>
+            <input id="edadPerro" name="edadPerro" type="number">
+        </div>
+        <div>
+            <label for="descrPerro">Descripcion de Perro:</label>
+            <input id="descrPerro" name="descrPerro" type="text">
+        </div>
+        <div>
+            <label for="fertilidadPerro">Fertilidad de Perro:</label>
+            <input id="fertilidadPerro" name="fertilidadPerro" type="checkbox">
+        </div>
+        <div>
+            <label for="vacunaPerro">Vacuna de Perro:</label>
+            <input id="vacunaPerro" name="vacunaPerro" type="checkbox">
+        </div>
+        <div>
+            <label for="chipPerro">Chip de Perro:</label>
+            <input id="chipPerro" name="chipPerro" type="checkbox">
+        </div>
+        <div>
+            <label for="adopcionPerro">Adoptado:</label>
+            <input id="adopcionPerro" name="adopcionPerro" type="checkbox">
+        </div>
+        <div>
+            <label for="fechaPerro">Fecha de entrada:</label>
+            <input id="fechaPerro" name="fechaPerro" type="text">
+        </div>
+        <div>
+            <label for="idPerrera">Perrera a la que pertenece:</label>
+            <input id="idPerrera" name="idPerrera" type="number">
+        </div>
+        <button type="reset">Limpiar</button>
+        <button >Registrar</button>
+    </form>
+</div>
+<table>
+    <!-- tr -> table row -->
+    <tr>
+        <!-- th -> table header -->
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Tamaño</th>
+        <th>Sexo</th>
+        <th>Edad</th>
+        <th>Descripcion</th>
+        <th>Fertilidad</th>
+        <th>Vacuna</th>
+        <th>Chip</th>
+        <th>Adopcion</th>
+        <th>Fecha Entrada</th>
+        <th>Perrera</th>
+    </tr>
+    <!-- tr -> table row -->
+    <% arreglo.forEach((perro)=>{ %>
+    <tr>
+        <!-- td -> table detail -->
+        <td><%=perro.nombrePerro%></td>
+        <td><%=perro.razaPerro%></td>
+        <td><%=perro.tamanioPerro%></td>
+        <td><%=perro.sexoPerro%></td>
+        <td><%=perro.edadPerro%></td>
+        <td><%=perro.descrPerro%></td>
+        <td><%=perro.fertilidadPerro%></td>
+        <td><%=perro.vacunaPerro%></td>
+        <td><%=perro.chipPerro%></td>
+        <td><%=perro.adopcionPerro%></td>
+        <td><%=perro.fechaPerro%></td>
+        <td><%=perro.perreraIdPerrera%> </td>
+        <td>
+            <form action="/Perro/Admin/borrar/<%=perro.idPerro%>"
+                  method="post"
+            >
+
+                <button type="submit">Eliminar</button>
+
+            </form>
+            <a href="/Perro/Admin/actualizar/<%=perro.idPerro%>">
+                <button>Actualizar</button>
+            </a>
+        </td>
+    </tr>
+    <% }) %>
+</table>

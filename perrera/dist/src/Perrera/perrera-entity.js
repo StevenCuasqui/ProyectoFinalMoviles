@@ -31,7 +31,8 @@ __decorate([
 __decorate([
     typeorm_1.Column({
         name: 'capacidad_Perrera',
-        type: 'int'
+        type: 'int',
+        default: 0
     }),
     __metadata("design:type", Number)
 ], PerreraEntity.prototype, "capacidadPerrera", void 0);

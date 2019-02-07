@@ -52,7 +52,7 @@ export class PerroEntity{
         {
             name: 'edad_perro',
             type: 'int',
-
+            default: 1
 
         }
     )edadPerro:number;
@@ -69,7 +69,7 @@ export class PerroEntity{
         {
             name: 'fertilidad_perro',
             type: Boolean,
-
+            default: false
 
         }
     )fertilidadPerro:boolean;
@@ -78,7 +78,7 @@ export class PerroEntity{
         {
             name: 'vacuna_perro',
             type: Boolean,
-
+            default: false
 
         }
     )vacunaPerro:boolean;
@@ -86,7 +86,7 @@ export class PerroEntity{
         {
             name: 'chip_perro',
             type: Boolean,
-
+            default: false
 
         }
     )chipPerro:boolean;
@@ -95,7 +95,7 @@ export class PerroEntity{
         {
             name: 'adopcion_perro',
             type: Boolean,
-
+            default: false
 
         }
     )adopcionPerro:boolean;

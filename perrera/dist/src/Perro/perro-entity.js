@@ -60,6 +60,7 @@ __decorate([
     typeorm_1.Column({
         name: 'edad_perro',
         type: 'int',
+        default: 1
     }),
     __metadata("design:type", Number)
 ], PerroEntity.prototype, "edadPerro", void 0);
@@ -76,6 +77,7 @@ __decorate([
     typeorm_1.Column({
         name: 'fertilidad_perro',
         type: Boolean,
+        default: false
     }),
     __metadata("design:type", Boolean)
 ], PerroEntity.prototype, "fertilidadPerro", void 0);
@@ -83,6 +85,7 @@ __decorate([
     typeorm_1.Column({
         name: 'vacuna_perro',
         type: Boolean,
+        default: false
     }),
     __metadata("design:type", Boolean)
 ], PerroEntity.prototype, "vacunaPerro", void 0);
@@ -90,6 +93,7 @@ __decorate([
     typeorm_1.Column({
         name: 'chip_perro',
         type: Boolean,
+        default: false
     }),
     __metadata("design:type", Boolean)
 ], PerroEntity.prototype, "chipPerro", void 0);
@@ -97,6 +101,7 @@ __decorate([
     typeorm_1.Column({
         name: 'adopcion_perro',
         type: Boolean,
+        default: false
     }),
     __metadata("design:type", Boolean)
 ], PerroEntity.prototype, "adopcionPerro", void 0);

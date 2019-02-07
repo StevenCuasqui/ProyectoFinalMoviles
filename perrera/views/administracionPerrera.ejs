@@ -1,0 +1,60 @@
+<div>
+    <h1>Administracion de Perrera</h1>
+    <div><p>Este es un texto de prueba</p></div>
+</div>
+<form action="/Perrera/Admin"
+      method="get">
+
+    <div>
+        <label for="busqueda">Busqueda</label>
+        <input id="busqueda" type="text" name="busqueda">
+    </div>
+
+    <button type="submit">Buscar</button>
+
+</form>
+
+<div>
+    <form action="/Perrera/Admin/crear"
+          method="POST">
+        <div>
+            <label for="nombrePerrera">Nombre de Perrera:</label>
+            <input id="nombrePerrera" name="nombrePerrera" type="text">
+        </div>
+        <div>
+            <label for="capacidadPerrera">Capacidad de Perrera:</label>
+            <input id="capacidadPerrera" name="capacidadPerrera" type="number">
+        </div>
+        <button type="reset">Limpiar</button>
+        <button >Registrar</button>
+    </form>
+</div>
+<table>
+<!-- tr -> table row -->
+<tr>
+<!-- th -> table header -->
+<th>Nombre</th>
+<th>Perrera</th>
+<th>Acciones</th>
+</tr>
+<!-- tr -> table row -->
+<% arreglo.forEach((perrera)=>{ %>
+<tr>
+<!-- td -> table detail -->
+<td><%=perrera.nombrePerrera%></td>
+<td><%=perrera.capacidadPerrera%> </td>
+<td>
+<form action="/Perrera/Admin/borrar/<%=perrera.idPerrera%>"
+method="post"
+>
+
+<button type="submit">Eliminar</button>
+
+</form>
+    <a href="/Perrera/Admin/actualizar/<%=perrera.idPerrera%>">
+        <button>Actualizar</button>
+    </a>
+</td>
+</tr>
+<% }) %>
+</table>

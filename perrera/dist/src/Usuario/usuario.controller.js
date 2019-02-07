@@ -34,7 +34,6 @@ let UsuarioController = class UsuarioController {
     crearUsuarioFormulario(usuario, response) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this._usuarioService.crear(usuario);
-            const parametrosConsulta = `?accion=crear&nombre=${usuario.nombre}`;
             response.redirect('/Usuario/registro');
         });
     }

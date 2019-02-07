@@ -20,7 +20,8 @@ export class PerreraEntity{
     @Column(
         {
             name:'capacidad_Perrera',
-            type: 'int'
+            type: 'int',
+            default: 0
         }
     )capacidadPerrera: number
 
