@@ -99,7 +99,7 @@ export class AppController {
             .login(nombre, password);
         console.log(identificado);
         if (identificado) {
-            sesion.usuario = nombre;
+            sesion.usu = nombre;
             response.redirect('/Usuario/inicio')
         } else {
             response.render('login'
@@ -163,15 +163,6 @@ export class AppController {
     }
 
 
-    @Get('registro')
-    registroVista(
-        @Res() response,
-
-    ) {
-        response.render('registro')
-
-
-    }
 
 
 }
