@@ -53,6 +53,37 @@ export class UsuarioService {
         return this._usuarioRepository.remove(usuarioEntityAEliminar)
     }
 
+    async login(nombre: string, password: string)
+        : Promise<boolean> {
+        // 1) Buscar al usuario por nombre
+        // 2) Comparar si el password es igual al password
+
+        const usuarioEncontrado = await this._usuarioRepository
+            .findOne({
+                where: {
+                    nombre: nombre
+                }
+            });
+        if (usuarioEncontrado) {
+
+            if (usuarioEncontrado.contrasenia === password) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } else {
+            return false;
+        }
+
+
+    }
+
+
+
+
+
+
     buscarPorId(idUsuario: number): Promise<UsuarioEntity> {
         return this._usuarioRepository.findOne(idUsuario);
     }
@@ -82,5 +113,10 @@ export class UsuarioService {
 export interface Usuario {
     id: number;
     nombre: string;
-            biografia: string;
+    apellido: string;
+    fechaNacimiento: string;
+    correo: string;
+    telefono: string;
+    contrasenia: string;
+    genero: string;
 }
