@@ -44,14 +44,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="ejs" value="454" />
+          <entry key="ejs" value="645" />
           <entry key="json" value="1" />
           <entry key="ts" value="758" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="EJS" value="454" />
+          <entry key="EJS" value="645" />
           <entry key="JSON" value="1" />
           <entry key="TypeScript" value="758" />
         </counts>
@@ -60,11 +60,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/perrera/views/galeria-principal.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="374">
+              <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#body#0;n#!!top" />
+                <element signature="n#src#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,10 +117,10 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/perrera/src/Perro/perro.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="372">
               <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
               <folding>
                 <element signature="e#0#78#0" expanded="true" />
@@ -182,8 +186,8 @@
         <option value="$PROJECT_DIR$/perrera/src/Usuario/usuario.controller.ts" />
         <option value="$PROJECT_DIR$/perrera/src/app.module.ts" />
         <option value="$PROJECT_DIR$/perrera/src/app.controller.ts" />
-        <option value="$PROJECT_DIR$/perrera/views/galeria-principal.ejs" />
         <option value="$PROJECT_DIR$/perrera/src/Perro/perro.controller.ts" />
+        <option value="$PROJECT_DIR$/perrera/views/galeria-principal.ejs" />
       </list>
     </option>
   </component>
@@ -315,12 +319,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549570025092</updated>
       <workItem from="1549570027225" duration="6300000" />
-      <workItem from="1549587285178" duration="19403000" />
+      <workItem from="1549587285178" duration="22001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25703000" />
+    <option name="totallyTimeSpent" value="28301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -526,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/perrera/views/galeria-principal.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/perrera/src/Perro/perro-entity.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-39">
@@ -544,11 +541,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/perrera/src/Perro/perro.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="372">
           <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
           <folding>
             <element signature="e#0#78#0" expanded="true" />
             <element signature="e#3192#3782#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perrera/views/galeria-principal.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#!!top" />
+            <element signature="n#src#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
