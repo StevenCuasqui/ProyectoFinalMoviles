@@ -99,8 +99,8 @@ export class AppController {
             .login(nombre, password);
         console.log(identificado);
         if (identificado) {
-            sesion.usu = nombre;
-            response.redirect('/Usuario/inicio')
+            sesion.usuario = nombre;
+            response.redirect('/saludar')
         } else {
             response.render('login'
                 ,
