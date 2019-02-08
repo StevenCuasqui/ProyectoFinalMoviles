@@ -1,37 +1,93 @@
-<table>
-    <!-- tr -> table row -->
-    <tr>
-        <!-- th -> table header -->
-        <th>Nombre</th>
-        <th>Raza</th>
-        <th>Tamaño</th>
-        <th>Sexo</th>
-        <th>Edad</th>
-        <th>Descripcion</th>
-        <th>Fertilidad</th>
-        <th>Vacuna</th>
-        <th>Chip</th>
-        <th>Adopcion</th>
-        <th>Fecha Entrada</th>
-        <th>Perrera</th>
-    </tr>
-    <!-- tr -> table row -->
-    <% arreglo.forEach((perro)=>{ %>
-    <tr>
-        <!-- td -> table detail -->
-        <td><%=perro.nombrePerro%></td>
-        <td><%=perro.razaPerro%></td>
-        <td><%=perro.tamanioPerro%></td>
-        <td><%=perro.sexoPerro%></td>
-        <td><%=perro.edadPerro%></td>
-        <td><%=perro.descrPerro%></td>
-        <td><%=perro.fertilidadPerro%></td>
-        <td><%=perro.vacunaPerro%></td>
-        <td><%=perro.chipPerro%></td>
-        <td><%=perro.adopcionPerro%></td>
-        <td><%=perro.fechaPerro%></td>
-        <td><%=perro.perreraIdPerrera%> </td>
+<%- include('comunes/header',{titulo:'titulo'}) %>
 
-    </tr>
-    <% }) %>
-</table>
+<body>
+<div class="container">
+
+
+    <h1>Bienvenido a la Perrera Cuasqui</h1>
+    <p>Buscar por nombre o correo</p>
+
+    <script>
+        function borrar(evento) {
+            console.log(evento)
+            const respuesta = confirm('¿Estás seguro?')
+            if (!respuesta) {
+                evento.preventDefault()
+            }
+            console.log(respuesta)
+        }
+    </script>
+
+    <form action="/Perro/inicio" method="get">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label for="busqueda">Busqueda</label>
+                    <input class="form-control" id="busqueda" type="text" name="busqueda">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <button type="submit"
+                        class="btn btn-outline-info btn-buscar btn-block">Buscar
+                </button>
+
+            </div>
+        </div>
+    </form>
+
+    <% const existeMensaje = typeof mensaje !== "undefined" ? true : false; %>
+
+    <% if(existeMensaje){ %>
+
+        <div class="animated fadeOut alert alert-<%= accion %>" role="alert">
+            MENSAJE: <%= mensaje %>
+        </div>
+
+    <% } %>
+
+    <h2>Perros Disponibles</h2>
+
+    <table class="table table-hover animated fadeInUp">
+        <caption>Lista de perros</caption>
+        <!--tr -> table row-->
+        <thead>
+        <tr>
+            <!--th = table header-->
+            <th width="25%">Nombre del perro</th>
+            <th width="25%">Raza</th>
+            <th width="20%">Tamaño</th>
+            <th width="30%">Acciones</th>
+        </tr>
+        </thead>
+
+        <% arreglo.forEach ((perro) => { %>
+            <tr>
+                <td>
+                    <%= perro.nombrePerro %>
+                </td>
+                <td>
+                    <%= perro.razaPerro %>
+                </td>
+                <td>
+                    <%= perro.tamanioPerro %>
+                </td>
+                <td>
+
+
+                    </form>
+
+                        <button type="button"
+                                class="btn btn-outline-info btn-block">ADOPTAR
+                        </button>
+
+                </td>
+            </tr>
+        <% }) %>
+
+    </table>
+</div>
+<%- include('comunes/librerias') %>
+</body>
+
+</html>
+

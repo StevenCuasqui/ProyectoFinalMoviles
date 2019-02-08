@@ -100,7 +100,7 @@ export class AppController {
         console.log(identificado);
         if (identificado) {
             sesion.usuario = nombre;
-            response.redirect('/saludar')
+            response.redirect('/Perro/inicio')
         } else {
             response.render('login'
                 ,
