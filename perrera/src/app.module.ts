@@ -21,8 +21,8 @@ import {AdopcionModule} from "./Adopcion/adopcion.module";
               username: 'Admin',
               password: 'web2018',
               database: 'proyectoweb',
-              synchronize: true,
-              dropSchema: true,
+              synchronize: false,
+              dropSchema: false,
               entities: [
                   UsuarioEntity,
                   PerroEntity,

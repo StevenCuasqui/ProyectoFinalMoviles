@@ -1,37 +1,156 @@
-<table>
-    <!-- tr -> table row -->
-    <tr>
-        <!-- th -> table header -->
-        <th>Nombre</th>
-        <th>Raza</th>
-        <th>Tamaño</th>
-        <th>Sexo</th>
-        <th>Edad</th>
-        <th>Descripcion</th>
-        <th>Fertilidad</th>
-        <th>Vacuna</th>
-        <th>Chip</th>
-        <th>Adopcion</th>
-        <th>Fecha Entrada</th>
-        <th>Perrera</th>
-    </tr>
-    <!-- tr -> table row -->
-    <% arreglo.forEach((perro)=>{ %>
-    <tr>
-        <!-- td -> table detail -->
-        <td><%=perro.nombrePerro%></td>
-        <td><%=perro.razaPerro%></td>
-        <td><%=perro.tamanioPerro%></td>
-        <td><%=perro.sexoPerro%></td>
-        <td><%=perro.edadPerro%></td>
-        <td><%=perro.descrPerro%></td>
-        <td><%=perro.fertilidadPerro%></td>
-        <td><%=perro.vacunaPerro%></td>
-        <td><%=perro.chipPerro%></td>
-        <td><%=perro.adopcionPerro%></td>
-        <td><%=perro.fechaPerro%></td>
-        <td><%=perro.perreraIdPerrera%> </td>
+<%- include('comunes/header',{titulo:'titulo'}) %>
 
-    </tr>
-    <% }) %>
-</table>
+<body>
+<div class="container">
+
+
+    <div class="row">
+        <div class = col-sm-2>
+
+        </div>
+        <div class = col-sm-8>
+            <h1 align="center"> Bienvenido a la Perrera Cuasqui </h1>
+        </div>
+        <div class = col-sm-2>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="row">
+        <div class ="col-sm-2"></div>
+        <div class = "col-sm-8">
+
+
+            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="10000">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUQEhIVEBUVFRUQFRUQFQ8PFRUQFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQGi0dHSUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tK//AABEIAKgBLAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAADAAECBAUGBwj/xAA4EAABBAAEBAQEAwcFAQAAAAABAAIDEQQSITEFQVFhBhNxgSKRofAHMrEUQmJywdHxI1KSouEW/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAIREBAQACAgMAAgMAAAAAAAAAAAECEQMhEjFBBCITMmH/2gAMAwEAAhEDEQA/ALQCRCkmIXl/yO3xMAnTpJ/yF4mUgE1JwjzLxOApgJgFMBPzHiak+VSAUg1HmPFANUwxTaxFaxPzHiE1iPFhy7YWj4fDFxoC1u4HDNZRIorTCXJN6Yh4VJQOUmzWnVLDcMe81WXqTyXW56HZBfOtfCJ2z4OCxD81v98o+QV6Hh0I2jb7/F+qm1w9kZppV0QQwsQ2jZ/xakcDC4axt+VfoiPGqnEUbGmbiPD0LtgWfykn6FZc/hd4steHdNKPuurtIouMociPC7q1cAefOli8U4c+I6jTkeq9GKqYuJrwWuFg6aqMsJZ0qWyvMHlAe5bfG+CPiJc1pczcOFmh/F0XPSlcmW5dVtNGe9Ae9M96rvkUbUm56E6RCfIgukRsrRzIm8xVTImL0k7WHSKBkVcyKDnoGx3SIL5EIyITpEaLYzpFDzEBz1DMnotvTrSSpKlltudJMnRsjqQCiFIBPZJBTaoBECewk0IrAoNVjDssgInfQSjjvktDDYDm/wCEfVRxfE2wspv0WS3ir32XaNHX9BqunHDHG99p7v8AjfONa34W0AiMxY5/XRcqJi52vwjn2HRacrnVbaAqyX7ALSZ0rhI2pOICqH0NhRbPW59lz+CJcS4uutPhFC+y2MBhMxsk+6qW1FkjRhkLuStsugSqGIxjYq6bLTgna8AjYrSRGwC81aMxPIwUe6aJGhsdoTOegvnrRNhsY11ixvSZJSPrXkoGUHZElZ8isqiHlvy3Gnqs7dKk2MzEa0flvYVaTh2H1IiYL5hrVHGt6Gu/Q91UmxTgAeYNOHbqsrnr218dub8V8HEf+oKF/wC0UFyEgXpnFJmPie2TUAXZG3cLznFRgEgGx1HNY563uDudKTwhOarLmqBap0SsWpqVksUSxMKzghuCtOYoGNMlNwQnNV10aE6NBVTIUKVt0ah5apL0wJJ0qXNp07MknpKky2ZSBTUpAI0DgojVABEAQE2K1G/K0u7KuxWpIc0dBXh7KseSQSOo6D9So4gG9NhoB6c1Rxzyx2U7poMa4kA9x81rMmum3h8Oav7pR49ijDFQ1c7QDodrVzhzrFnb+y5LjXFA+ZjRr/qOs9gBX1/RaW6xZzuus4XDlYxpN0Bfcncq7xDjTYI3PLgxjBb3OugP6nsN1iRSSAaAk9eSyfEnAZ8XGIzIavOWtAALhsTe9K8L8Z5xlcQ8aumPmMZMI2nWRzAxtO0BIs6HqV6R4KmfLGHX8Pvz1XmHDvw+ndJlke7KSA4D4QW3db9l7fwbh7IY2xsbla0UNSt9T4y3ddrzmaIcUZCtEaVSdoT0nbB4/C8xksBzAHQc14pL42mhle4ODiHZRC4yxuIG5zAUNRsvod7QV5/4o/DrDYiUzZKcTbg2qPcBTrV7VL1qNbwn4jjxeGZO0mnCiHEZmvGhaf7qPE8aGTRtJ/MDXqCP7onDPDsUMQijGUCjY0NjquU/Et5w78I7WvMc0ntQv77LHl2049bdpjCAA7kQsfEyj4gOalwDiP7Th9dXN3I/VUCWgkXZuvQrHPL60xx10vaPjc01eUij6civP549Su0xU3lsu9bXLOjWdLL2znRKJiWj5KbyUks7yUvKWh5KXko2TNMKgYVqGFRMKZsp0KE6Fa5hQ3QJ7LTIdCoGFa5gUDh0bLTrQFKkgpALPTTaNJUp0nyo0Nh5UsqLlSyoLaICm0JAKQQe02BXMP0VRiswurVOdUqxfFnDzXmDfmsPhTszgK1913eMZnYRXJc3wPBVIdNitJP2a439GxjneVAa3rL3s/5Xm+FaZcS0AUAf8lemzRCWSjq2MFx7vI0HsP1XFcMYBiiAOpCrO/sWHqu7w0TWs9kSCAk0NAd61JVZ1kVra08LII2HmQNT/QLql058ostYAQ0Vfz+a12SZRa57h0uY3rrr7IvHseWROc11ZR81c9bZ33o/HvF8OHAF5nHXKNTXUrlpfxEdejdOm68n494gkMzrFuuyTe/QdqVX/wCgk0+Bt10JtXJNJ32+i+A+KY8TQbo7mD+o6roX7Zl81+EPEWI/aG/CA292jLXvzPZfR3D5M0TSdLHNKw9l8O4XD/ivFmwrJN/Llbf8rraf6Lp8XMY3XrXPmsHxuc+DkA6sPsHgrn5MtytsJqyub/D7E5JjCfhDgaB5giwtuThuWdzjta56N+sOIZu2geXT7912vFBmj81u5aL6rls3NN/LXbm+Jy5nUNhoqJjVpwUaUslby0vLVjKllSCt5Sfy1YypZUBW8pMYlZpNSDVTEoGFXaUcqAo+So+Qr5aolqZNAKYUGorQpBgFMBOApgJhCk1I2VLKmAgE4CnSVJAmo8aCAjsCAsR7LOlLYRY+JzjsNz2HdaAaSKBruo8M4W1r85cXk6C9gD0/urxt+KmUku13hXDyIzYsm3O/mP3XsuMxuGyYkOIyjXp7bL1CJoa2guQ8T4K3Ztet7roz4tYTXxnhyftdsfX8w5eydkznDXbudPVAbiCPh66IeMtoDmmiNSRyHbuVErSuw4e8tjusx33+iqY7H5gRlIO1VZ9lm8G4gySLfTcEEG+qDisdRIzG9h8O1mvv36Lsnpy/XD+KMA4OJaxrgdw4NdfewFxLcLIHt/dcTbTfTbVeicUaZHOp22mpqh/lc3inwh7Q6VoLb21AB2RtXjKvcAz52umIcW2dO56L3PgmLJa3pQ1Oq8Y4OwZw/M1wB5EHQHX00IK9V4NiGaHQga3ene0bGU6anE2BzwLOos9Fk+IowYXRt5gD3sH32V1mJbO10jDmGwI6D7KrtwXmVmJPZY599RWPTB4TwvPE8ZSCOtAE9u60uGY9rmHDykNeAWC9M45UevZdZgsA1rMo2PXVcpxzh5jfm0cLuu6y5OO4yWKnJu9seeEtNHQoRarE8hcbKEudSGVNSIlSQDpKkQhNSQQpNSJSYhADpMQiUmKAEQmpEITUmFlqI0qAUmqC2M1TCg0KQT2YiSYBOjYMQlSdJGwcIzEJoRmKgPGFp4CLXZZ+HbZW/h25Wrp4MN1lnTTyVosfi4zNV3EuWfKCV2WbjOVyuIw5zUOfXko8XZlhLR8RI1K0eIR1tz/RZpeayk9tfUrjyni6cbt5/DjZcLIcpJBcxgGtURbj/wBj9Feb4p89rKYbcHZqd+QtvfnWv1R/FeEoB4H5Xtd7ba/RYHhlrWzOB0bJTP5HWS31Fkj5Lownlhv6mSTkkvqp8RlmluraN/h01u/dc7JgXB5aegPsV6i7gx1FfdLH4jwQtlYTzbX/ABP/AKnHVycMl6Y3hzClp51rt3AF/RdPhX4kyDDFwa17gAW7PiJ1+mYFNhcHkoNGp0FcyVtcIhzYtnNsTcl/x1y7kuPsFFut0cnHJjK7HgOEMLAM2lbcltYRlm9lUgiN77LTgajjnTjyq7EVj+JMECwv+a1o7SxUWdjmnmCFplPKWM3mbkyPioS1xaRRBQsq8ytpTUnpTDUsqSg6TUiUmISLaFJiFIhMUjRpRIUyE1I2EKTKRCakyWFNigiMUoFCcKKkE1bSTqJKQKBtJOoEpByY2MEWNVg5Gjeqga+AiF2tR50WXw13NWsTKvR4Z+rDL2HKLVPEaI7p6VWU33WlEZWOK5/Hkfei6DGg0uW4job36Bc3J37b4FiR5zMuXWqPSu64fGw/s7yz82YelWukk4iRIA07AX68wm4vwsYkZo9JGjUciOqfDfHL2ed3HV+FcSZYGtkIMjGgE3eZoJaCb/e+HX2VjjWADg11atJ+X3S8v4bx3EYDECSRjntALHC6Do3VdHqKBBXazfiBgHx2JHtdV5HxvDvQEWCfdbOrHmxy1uiYWEFzy52QNaQCK/O5rg2r56H03Wt+H4L2Pc8AkPq6o7aa1roB81x2BxcnEniGCJ0TCbc941rr0+z1Xq/CcG3DsbCDmIFucd3O5kqbj12y5+aZXpoYaOlfYK7oMJCOE45BY3WioUaKCria4bxG0iU2ssNXQeLYakDuoWGAvN5ZrOtMb0aksqIGpis1bDyqNKZKYlIBkJqU01IG0SE2VTpOGoMLKmyo4amypg+RTa1TDU4ahCNJ1OlFyRo2kmtNmQDpJApEoBsyNCUBEjKJTdFgCA20KSYZt7UIZPgVGF5L162H9Ywq7I4qnLIQi4jE5dALKzpsS48r/RGZ4oYqW9FzPFjlF7ud8LB36hbWJxVWSK7jZZMEZe8zO1P5WDo3qufKfW8vxgSYMtLf+3qtJrXNOdn5m7dHNPI91pMwRc6iOX1VyPh+voFj3vbTrWmFIIsSDmbRGhBGopCwfh3C5ySL5gH1W5NhAH5q1y7+3/iDFDs+thpad5Ls5hNOi4Nkhjc2JoaR2HNXsDOXOBJ1+7CwcJiaNVroT6dVsYeOjY+ynM7ki4yOihk06qwx/RZeFkvfdaEQXTGNW41ZjCqxqyxyuJqjx7hxlZpuNfVcY+Mg0dCvRwuU8R4IMdmbpm1PqsPyOLc8oMb8YYCZzVNqcrjaKzmqNKw5DpSA8qcNU1JoQqBZFMMRMqk0JmEWJsqMWpqTCAKe0IOUrWfkzEtDcU5KiUtgN7lAOTyIYSAwcnJQgVMFOBJSBULTAqg1YHfBSngmDUqjhpNCFbwY3Xq/j2XGMsvYk0QQHM6orna9UKWMu2+ivIRm4+MPcG1TfzE9T0VXEYYHYfLRXMVDW5QISOSwvbWARSllA32JGnotjBzNfqPSlUe0FCwIyucBprY9VFml+2ljcBmBLfT2KpnBaHTbQei28JiRV/NEnhBIePy1qs7h30uZddudbhwDnOlfdLQw0/xkfun5LK4pi8zqaaA2rqgYcvBuz99kTor27ONnMK0yWlz2D4hpqctey1IMU0/vArfGxlYv+c4/vUOy1YHClkwkK6yUBaYoq+16zfEMYMd9FYZLeyp8enqOjqnn/Wk5K0rQy5OHLzGqZUUxcmzKTh6UwohybMhQlp7QsyfMgJlyWZBc5LMjYIMUmtVljFIMSmJaV/LTFiuliYxouKWXIxQDFpSQoJiU3GnIqNjRAxWBEpeWqmJ6VHNUSFYe1RDEz0hAaKv4J41VLyVawLKJXd+Jl7jHln1KTUkk6IM2Oa0K3NE2tr9VUGFaTZPsNl0ZpxBiLpOVDuqWLwuQ6H26Loo8rRQFrOxbQ41WU7g2srFxiHF0KdqiwTtzaHWgdd9unySx2BI/VYrpSyQO6HX05qMumkdXh5DemnotvDOOQ+iycCGmiOeoWy6mRuPYp44/U3L44+YNzV33ChJim0New7qq7FgO105adVTghfPKHUWtHqLKz00WTI5zrNk8gDXzXQ8LLm1mYR3bror3B+CCgXC10MWFbVUETG2lbAsECRYId2Ioq/EeoVfDsDTStUujFjkIxc14keQ/fSl0jDuuO4lKXPN8jSj8i6wLH2pFNaJSgQvPa6RLlEvSKE4qTFD04cgNR2NQIkEi5SAUZAg0C5NmTJJE02FFaUyS0hbGtIuSSVVKtJIoByZJZztUEBTlJJXBsEojWpJJyHsQRpw2tUkl1/jTtnyegX4izSPBHepTJLfL2WPpaGHvREbgm1skkontTmfEmI8ppJ2C4l+MEjruxy5FJJZ5+14u24NKPLaL1b+iPx7jDWx0D1B9Ckkql/VOu3P8F4HLOc7wWM/i3cOo7LuOH8Ha2qGgSSS8Ye63IYcoTSFJJV6SruNnQq3CTSSSeJZeixsuSMlcbI+yT11SSWH5F70MCpM5MkuarBeoeWkklpVSbGjMamSS0BcqG8JklVhbBDU+VJJTo3//2Q==" width="100" height="300" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-interval="2000">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhB82XwnxSmPIer3V_bStkR-RqxlhFFcIc7GKoxX7NUXHt0N0S" width="100" height="300"class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.rionegro.com.ar/documents/1/0/650x366/0c0/0d0/none/12350/BIXD/image_content_9535595_20180406133200.jpg" width="100" height="300" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
+        <div class ="col-sm-2"></div>
+    </div>
+    <br>
+    <p>Buscar Perro por nombre o raza</p>
+
+    <script>
+        function borrar(evento) {
+            console.log(evento)
+            const respuesta = confirm('¿Estás seguro?')
+            if (!respuesta) {
+                evento.preventDefault()
+            }
+            console.log(respuesta)
+        }
+    </script>
+
+    <form action="/Perro/inicio" method="get">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label for="busqueda">Busqueda</label>
+                    <input class="form-control" id="busqueda" type="text" name="busqueda">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <button type="submit"
+                        class="btn btn-outline-info btn-buscar btn-block">Buscar
+                </button>
+
+            </div>
+        </div>
+    </form>
+
+    <% const existeMensaje = typeof mensaje !== "undefined" ? true : false; %>
+
+    <% if(existeMensaje){ %>
+
+        <div class="animated fadeOut alert alert-<%= accion %>" role="alert">
+            MENSAJE: <%= mensaje %>
+        </div>
+
+    <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>Perros Disponibles</h2>
+
+    <table class="table table-hover animated fadeInUp">
+        <caption>Lista de perros</caption>
+        <!--tr -> table row-->
+        <thead>
+        <tr>
+            <!--th = table header-->
+            <th width="25%">Nombre del perro</th>
+            <th width="25%">Raza</th>
+            <th width="20%">Tamaño</th>
+            <th width="30%">Acciones</th>
+        </tr>
+        </thead>
+
+        <% arreglo.forEach ((perro) => { %>
+            <tr>
+                <td>
+                    <%= perro.nombrePerro %>
+                </td>
+                <td>
+                    <%= perro.razaPerro %>
+                </td>
+                <td>
+                    <%= perro.tamanioPerro %>
+                </td>
+                <td>
+
+
+                    </form>
+
+                        <button type="button"
+                                class="btn btn-outline-info btn-block">ADOPTAR
+                        </button>
+
+                </td>
+            </tr>
+        <% }) %>
+
+    </table>
+</div>
+<%- include('comunes/librerias') %>
+</body>
+
+</html>
+

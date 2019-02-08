@@ -3,6 +3,7 @@ import {Perro, PerroService} from "./perro.service";
 import {PerreraEntity} from "../Perrera/perrera-entity";
 import {PerroEntity} from "./perro-entity";
 import {Perrera} from "../Perrera/perrera.service";
+import {FindManyOptions,Like} from "typeorm";
 
 @Controller('Perro')
 export class PerroController{
@@ -106,6 +107,71 @@ export class PerroController{
             perro =await this._perroService.buscar();
         }
         response.render('galeria-principal.ejs',{arreglo: perro})
+    }
+
+
+
+    @Get('inicio')
+    async inicio2(
+        @Res() response,
+        @Query('accion') accion: string,
+        @Query('nombre') nombre: string,
+        @Query('busqueda') busqueda: string,
+        //@Session() sesion,
+    ) {
+
+        // if(sesion.usuario){
+        let mensaje; // undefined
+        let clase; // undefined
+
+        if (accion && nombre) {
+            switch (accion) {
+                case 'actualizar':
+                    clase = 'info';
+                    mensaje = `Registro ${nombre} actualizado`;
+                    break;
+                case 'borrar':
+                    clase = 'danger';
+                    mensaje = `Registro ${nombre} eliminado`;
+                    break;
+                case 'crear':
+                    clase = 'success';
+                    mensaje = `Registro ${nombre} creado`;
+                    break;
+            }
+        }
+
+        let perros: PerroEntity[];
+        if (busqueda) {
+
+            const consulta: FindManyOptions<PerroEntity> = {
+                where: [
+                    {
+                        nombrePerro: Like(`%${busqueda}%`)
+                    },
+                    {
+                        razaPerro: Like(`%${busqueda}%`)
+                    }
+                ]
+            };
+            perros = await this._perroService.buscar(consulta);
+        } else {
+            perros = await this._perroService.buscar();
+        }
+        response.render('galeria-principal', {
+            nombre: '',
+            arreglo: perros,
+            mensaje: mensaje,
+            accion: clase,
+            titulo: 'Gestion de perros',
+
+        });
+        // }else{
+        //     throw new ForbiddenException({mensaje:'No puedes entrar'});
+        // }
+
+
+
     }
 
 

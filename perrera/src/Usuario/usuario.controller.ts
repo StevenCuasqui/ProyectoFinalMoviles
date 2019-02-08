@@ -15,6 +15,15 @@ export class UsuarioController {
 
     }
 
+    @Get('inicio')
+    Vistainicio(
+        @Res() response
+    ){
+
+           response.render('galeria-principal')
+        }
+
+
     @Get('registro')
     crearUsuario(
         @Res() response,
