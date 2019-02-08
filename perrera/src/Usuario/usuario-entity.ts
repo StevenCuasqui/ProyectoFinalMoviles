@@ -40,7 +40,7 @@ export class UsuarioEntity {
             default: 'fechaNacimiento'
         }
     )
-    fechaNacimiento: string;
+    fechaNacimiento: Date;
 
     @Column(
         {
