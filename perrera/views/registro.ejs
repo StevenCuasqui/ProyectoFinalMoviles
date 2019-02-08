@@ -1,50 +1,146 @@
-<div>
-    <h1>¿Quienes Somos?</h1>
-    <div><p>Este es un texto de prueba</p></div>
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet"
+          href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet"
+          href="/css/misestilos.css">
+</head>
+<body>
+<div class="container">
+
+
+    <h1>Registrarse</h1>
+
+    <p>Registrate</p>
+
+    <form action="/Usuario/registro" method="post">
+
+        <div class = "row">
+            <% const existe20 = typeof error20 !== "undefined" ? true : false; %>
+            <% const existe21 = typeof error21 !== "undefined" ? true : false; %>
+            <% const existe22 = typeof error22 !== "undefined" ? true : false; %>
+            <% const existe23 = typeof error23 !== "undefined" ? true : false; %>
+            <% const existe24 = typeof error24 !== "undefined" ? true : false; %>
+            <% const existe25 = typeof error25 !== "undefined" ? true : false; %>
+            <% const existe26 = typeof error26 !== "undefined" ? true : false; %>
+            <% if(existe20){ %>
+                <div class = col-sm-7>
+                    <p style="color:#FF0000";> El campo <%= error20 %> no es valido</p>
+                </div>
+            <% } %>
+            <% if(existe21){ %>
+                <div class = col-sm-7>
+                    <p style="color:#FF0000";> El campo <%= error21 %> no es valido</p>
+                </div>
+            <% } %>
+            <% if(existe22){ %>
+                <div class = col-sm-7>
+                    <p style="color:#FF0000";> El campo  <%= error22 %> no es valido</p>
+                </div>
+            <% } %>
+            <% if(existe23){ %>
+                <div class = col-sm-7>
+                    <p style="color:#FF0000";> El campo <%= error23 %> no es valido</p>
+                </div>
+            <% } %>
+            <% if(existe24){ %>
+                <div class = col-sm-7>
+                    <p style="color:#FF0000";> El campo <%= error24 %> no es valido</p>
+                </div>
+            <% } %>
+            <% if(existe25){ %>
+                <div class = col-sm-7>
+                    <p style="color:#FF0000";> El campo <%= error25 %> no es valido</p>
+                </div>
+            <% } %>
+            <% if(existe26){ %>
+                <div class = col-sm-7>
+                    <p style="color:#FF0000";> El campo <%= error26 %> no es valido</p>
+                </div>
+            <% } %>
+            <div class = "col-sm-7 form-group">
+                <label for="nombre">Usuario </label>
+                <input class = "form-control" id="nombre" type="text" name="nombre">
+            </div>
+            <div class = "col-sm-7 form-group">
+                <label for="apellido">Apellido </label>
+                <input class = "form-control" id="apellido" type="text" name="apellido">
+            </div>
+
+
+            <div class = "col-sm-7 form-group">
+                <label for="correo">Correo</label>
+                <input class = "form-control" id="correo" type="text" name="correo">
+            </div>
+
+            <div class = "col-sm-7 form-group">
+                <label for="contrasenia">Password </label>
+                <input class = "form-control" id="contrasenia" type="password" name="contrasenia">
+            </div>
+            <div class = "col-sm-7 form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                <input class = "form-control" id="fechaNacimiento" type="Date" name="fechaNacimiento">
+
+            </div>
+            <div class = "col-sm-7 form-group">
+                <label for="telefono">telefono</label>
+                <input class = "form-control" id="telefono" type="text" name="telefono">
+            </div>
+            <div class = "col-sm-7 form-group">
+                <label for="genero">genero</label>
+                <input class = "form-control" id="genero" type="text" name="genero">
+            </div>
+
+        </div class = "col-sm-12 form-group">
+        <button type="submit" class="btn btn-info boton-esapciado">Registrarse</button>
+
+
+    </form>
+
+    <a href="/login"> YA TENGO UNA CUENTA
+
+    </a>
+
+
 </div>
-<div>
-<form action="/Usuario/registro"
-      method="POST">
-    <div>
-        <label for="nombre">Nombre:</label>
-        <input id="nombre" name="nombre" type="text">
-    </div>
-
-    <div>
-        <label for="apellido">Apellido:</label>
-        <input name="apellido"
-                  id="apellido">
-    </div>
-    <div>
-        <label for="correo">Correo:</label>
-        <input name="correo"
-               id="correo">
-    </div>
-    <div>
-        <label for="contrasenia">Contraseña:</label>
-        <input name="contrasenia"
-               id="contrasenia">
-    </div>
-    <div>
-        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-        <input type = "Date" name="fechaNacimiento"
-               id="fechaNacimiento">
-    </div>
-
-    <div>
-        <label for="telefono">Telefono:</label>
-        <input name="telefono"
-               id="telefono">
-    </div>
-
-    <div>
-        <label for="genero">Genero:</label>
-        <input name="genero"
-               id="genero">
-    </div>
+</body>
+</html>
 
 
-    <button type="reset">Limpiar</button>
-    <button >Registrar</button>
-</form>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
